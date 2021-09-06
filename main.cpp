@@ -23,9 +23,7 @@ int main(int argc, char *argv[]) {
         if (subcommand == "create") {
             return main_docbox_create(argc, argv);
         } else if (subcommand == "dump") {
-            return main_docbox_dump(argc, argv);
-        } else if (subcommand == "index-rebuild") {
-            return main_docbox_index_rebuild(argc, argv);
+            return main_docbox_dump(argc, argv)
         } else if (subcommand == "--version" || subcommand == "-v") {
             if (argc != 2) {
                 printf("WARNING: Ignoring extra parameters after '%s'.", subcommand.c_str());
@@ -50,8 +48,6 @@ int main(int argc, char *argv[]) {
                     help_docbox_dump();
                 } else if (subcommand2 == "restore") {
                     help_docbox_restore();
-                } else if (subcommand2 == "index-rebuild") {
-                    help_docbox_index_rebuild();
                 } else {
                     printf("ERROR: No help for '%s'\n", subcommand2.c_str());
                     return 1;
