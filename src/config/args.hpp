@@ -1,0 +1,4 @@
+#define DEFAULT_MAX_DEPTH       2
+#define DEFAULT_MAX_DIR         4
+#define DEFAULT_MAX_KEY_SIZE    8
+#define DEFAULT_MAX_FILENAME    255
