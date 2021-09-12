@@ -4,7 +4,7 @@
 
 class instruction_t {
 public:
-    instruction_t(std::string inst, std::string bucket, int index, std::string name, int err);
+    instruction_t(std::string inst, std::string bucket, int index, std::string name);
     ~instruction_t() {}
 private:
     std::string inst_;
