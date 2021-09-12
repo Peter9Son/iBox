@@ -2,15 +2,15 @@
 
 # define MAX_PORT 255
 
-class instruction_t : public std::exception {
+class instruction_t {
 public:
-    instruction_t(std::string &_inst, std::string _bucket, int _index, std::string &_name, int _err);
-    ~instruction_t() throw() {}
-    std::string inst;
-    std::string bucket;
-    int index;
-    std::string name;
-    int err;
+    instruction_t(std::string inst, std::string bucket, int index, std::string name, int err);
+    ~instruction_t() {}
+private:
+    std::string inst_;
+    std::string bucket_;
+    int index_;
+    std::string name_;
+    int err_;
 
 };
-
