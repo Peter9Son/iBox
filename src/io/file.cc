@@ -33,13 +33,18 @@ int file_remove(std::string path, std::string name){
     return remove(pathName.c_str());
 }
 
-time_file_access get_file_size(fd_t fd){
+time_file_access get_file_access(fd_t fd){
     struct stat buffer;
-
     time_file_access time_t;
     int result = fstat(fd, &buffer);
     time_t.last_access = buffer.st_atime;
     time_t.last_change = buffer.st_ctime;
     time_t.last_modification = buffer.st_mtime;
     return time_t;
+}
+
+int get_file_size(fd_t fd){
+    struct stat buffer;
+    int result = fstat(fd, &buffer);
+    return buffer.st_size;
 }
