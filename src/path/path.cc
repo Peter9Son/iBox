@@ -24,7 +24,7 @@ std::string setpath(std::string bucket, std::string name){
         } else{
             directoryEntity dir = directoryEntity();
             if (dir.dir_open(bucket + "/" + name) == NULL){
-                if (dir.dir_create(name , 0) < 0)
+                if (dir.dir_create(name , 0777) < 0)
                 perror("faile in dir creation");
             }
             return name.substr(0,3) + "/" + name;
