@@ -12,7 +12,7 @@ struct time_file_access
 typedef int fd_t;
 class fileEntity {
 public:
-    fileEntity();
+    fileEntity(){};
 
     ~fileEntity();
 

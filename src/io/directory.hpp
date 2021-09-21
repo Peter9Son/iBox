@@ -8,7 +8,7 @@
 typedef int dir_t;
 class directoryEntity{
 public:
-    directoryEntity();
+    directoryEntity(){};
     ~directoryEntity();
     int dir_create(std::string path, mode_t mode){};
 
