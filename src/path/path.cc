@@ -36,10 +36,15 @@ std::string set__path (std::string bucket, std::string name) {
     if (name.empty()){
         perror("string empty");
     } else {
+        DirectoryEntity dir;
         if (file_name_lengh(name) <= DIR_LENGTH){
+            if (dir.dir_open(bucket + "/" + DEFAULT_DIR_NAME) == NULL){
+                chdir((bucket + "/" ).c_str());
+                if (dir.dir_create(DEFAULT_DIR_NAME, 0777) < 0)
+                    perror("faile in dir creation");
+            }
             return  bucket + "/" + DEFAULT_DIR_NAME + "/" + name;
         } else{
-            DirectoryEntity dir;
             if (dir.dir_open(bucket + "/" + name) == NULL){
                 chdir((bucket + "/" ).c_str());
                 if (dir.dir_create(name.substr(0,DIR_LENGTH), 0777) < 0)
