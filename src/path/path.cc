@@ -3,9 +3,6 @@
 
 #include "path/path.hpp"
 
-#define DATA_DIR "/var/BOXDATA/"
-#define DEFAULT_DIR_NAME "000"
-
 std::string set_bucket (std::string bucket) {
     if (bucket.empty()){
         perror("string empty");
@@ -14,8 +11,8 @@ std::string set_bucket (std::string bucket) {
        DirectoryEntity dir;
        if (dir.dir_open(bucket) == NULL){
            if (dir.dir_create(bucket, 0777) < 0) {
-                    perror("faile in dir creation");
-                    return NULL;
+                perror("faile in dir creation");
+                return NULL;
            }
             return bucket;
        }
@@ -66,4 +63,14 @@ std::string set__path (std::string bucket, std::string name) {
             return bucket + "/" + name.substr(0,DIR_LENGTH) + "/" + name;
         }
     }
+}
+
+
+int file_name_lengh (std::string name){
+    if (name.empty())
+        return 0;
+    else if (name.find(".") > 0)
+        return name.find(".");
+    else
+        return name.size();
 }
