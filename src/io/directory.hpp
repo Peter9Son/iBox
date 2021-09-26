@@ -6,10 +6,10 @@
 #include <vector>
 
 typedef int dir_t;
-class directoryEntity{
+class DirectoryEntity{
 public:
-    directoryEntity(){};
-    ~directoryEntity();
+    DirectoryEntity(){};
+    ~DirectoryEntity();
     int dir_create(std::string path, mode_t mode){};
 
     DIR* dir_open(std::string pathName){};

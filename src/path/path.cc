@@ -26,7 +26,7 @@ std::string setpath (std::string bucket, std::string name) {
         if (file_name_lengh(name) <= DIR_LENGTH){
             return  bucket + "/" + name;
         } else{
-            directoryEntity dir;
+            DirectoryEntity dir;
             if (dir.dir_open(bucket + "/" + name) == NULL){
                 chdir((bucket + "/" ).c_str());
                 if (dir.dir_create(name.substr(0,DIR_LENGTH), 0777) < 0)

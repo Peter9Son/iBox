@@ -10,11 +10,11 @@ struct time_file_access
 };
 
 typedef int fd_t;
-class fileEntity {
+class FileEntity {
 public:
-    fileEntity(){};
+    FileEntity(){};
 
-    ~fileEntity();
+    ~FileEntity();
 
     int file_create(std::string path, std::string name, mode_t mode){};
 
