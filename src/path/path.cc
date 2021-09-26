@@ -5,9 +5,21 @@
 
 #define DATADIR "/var/BOXDATA/"
 
+std::string set_bucket (std::string bucket) {
+    if (bucket.empty()){
+        perror("string empty");
+    } else {
+       DirectoryEntity dir;
+       if (dir.dir_open(bucket) == NULL){
+           if (dir.dir_create(bucket, 0777) < 0)
+                    perror("faile in dir creation");
+            return bucket;
+       }
+    }
+}
 
 
-std::string getpath(std::string bucket, std::string name){
+std::string get_path(std::string bucket, std::string name){
     if (name.empty()){
         perror("string empty");
     } else {
@@ -19,7 +31,7 @@ std::string getpath(std::string bucket, std::string name){
     }
 }
 
-std::string setpath (std::string bucket, std::string name) {
+std::string set__path (std::string bucket, std::string name) {
     if (name.empty()){
         perror("string empty");
     } else {

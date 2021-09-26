@@ -44,10 +44,6 @@ int main(int argc, char *argv[]) {
                 } else if (subcommand2 == "serve") {
                     help_docbox_serve();
                     return 0;
-                } else if (subcommand2 == "dump") {
-                    help_docbox_dump();
-                } else if (subcommand2 == "restore") {
-                    help_docbox_restore();
                 } else {
                     printf("ERROR: No help for '%s'\n", subcommand2.c_str());
                     return 1;
