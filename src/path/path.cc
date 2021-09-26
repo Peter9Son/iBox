@@ -3,9 +3,23 @@
 
 #include "path/path.hpp"
 
+std::string get_bucket(std::string bucket){
+    if (bucket.empty()){
+        perror("bucket string empty");
+        return NULL;
+    } else {
+        DirectoryEntity dir;
+        if (dir.dir_open(bucket) == NULL){
+            return NULL;
+        } else{
+            return bucket;
+        }
+    }
+}
+
 std::string set_bucket (std::string bucket) {
     if (bucket.empty()){
-        perror("string empty");
+        perror("bucket string empty");
         return NULL;
     } else {
        DirectoryEntity dir;
@@ -18,8 +32,6 @@ std::string set_bucket (std::string bucket) {
        }
     }
 }
-
-
 std::string get_path(std::string bucket, std::string name){
     if (name.empty()){
         perror("string empty");

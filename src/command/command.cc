@@ -1,9 +1,15 @@
 #include "command/command.hpp"
 
-instruction_t::instruction_t(std::string inst, std::string bucket, int index, std::string name)
-: inst_(inst),
-  bucket_(bucket),
-  index_(index),
-  name_(name),
-  err_(0) {
-}
+int command_file_create(std::string bucket, std::string name){
+    std::string test = get_pa
+
+};
+int command_file_write(std::string bucket, std::string name){
+
+};
+int command_file_read(std::string bucket, std::string name){
+
+};
+int command_file_delete(std::string bucket, std::string name){
+
+};

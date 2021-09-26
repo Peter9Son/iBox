@@ -11,6 +11,7 @@ public:
     Pathstring() : DirectoryEntity(), FileEntity() {};
     ~Pathstring() {};
 
+    std::string get_bucket (std::string bucket) {};
     std::string set_bucket (std::string bucket) {};
     std::string get_path(std::string name){};
     std::string set_path (std::string bucket, std::string name) {};

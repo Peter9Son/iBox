@@ -1,16 +1,13 @@
 #include <string>
 
-# define MAX_PORT 255
+#include "path.hpp"
 
-class instruction_t {
+class Instruction_t : public Pathstring {
 public:
-    instruction_t(std::string inst, std::string bucket, int index, std::string name);
-    ~instruction_t() {}
-private:
-    std::string inst_;
-    std::string bucket_;
-    int index_;
-    std::string name_;
-    int err_;
-
+    Instruction_t();
+    ~Instruction_t() {}
+    std::string command_file_create(std::string bucket, std::string name){};
+    std::string command_file_write(std::string bucket, std::string name){};
+    std::string command_file_read(std::string bucket, std::string name){};
+    std::string command_file_delete(std::string bucket, std::string name){};
 };
