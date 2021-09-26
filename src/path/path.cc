@@ -3,6 +3,8 @@
 
 #include "path/path.hpp"
 
+#define HOME_DIR "/var/BOXDATA/"
+
 
 
 std::string getpath(std::string bucket, std::string name){
